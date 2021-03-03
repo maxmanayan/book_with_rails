@@ -4,4 +4,11 @@ class BooksController < ApplicationController
     render component: "App"
   end
 
+  def index
+    @books = Book.all
+
+    render json: @books
+  end
+
+
 end
