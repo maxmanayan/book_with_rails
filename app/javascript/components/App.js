@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Books from "./Books";
 import axios from "axios";
+import BookForm from "./BookForm";
+import Book from "./Book";
 
 
 
@@ -22,10 +24,36 @@ const App = () => {
   },[])
 
 
+  const createBook = async (newBook) => {
+    try {
+      let res = await axios.post("/books", {...newBook})
+
+      console.log(res.data)
+      setBooks([res.data,...books])
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+
+  const deleteBook = async (id) => {
+    try {
+      let res = await axios.delete(`/books/${id}`)
+
+      let filteredBooks = books.filter(book => book.id !== id)
+
+      setBooks(filteredBooks)
+    } catch(err){
+      console.log(err)
+    }
+    
+  }
+
   return(
     <div>
       <h1>App Page</h1>
-      <Books books={books} />
+      <BookForm createBook={createBook}/>
+      <Books books={books} deleteBook={deleteBook}/>
       
     </div>
   )
