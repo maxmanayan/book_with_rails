@@ -11,7 +11,7 @@ const Books = (props) => {
 
   return(
     <div>
-      <h1>Books Page Here</h1>
+      <h1>Comics Read</h1>
       {renderBooks()}
     </div>
   )

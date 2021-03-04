@@ -2,16 +2,15 @@ import React from "react";
 
 
 const Book = (props) => {
-  const {title, author, id, deleteBook} = props
+  const {title, author, id} = props
   
   return(
-    <div>
-      <h1>{title}</h1>
-      <h2>by {author}</h2>
+    <div className= 'style-box'>
+      <h1>TITLE: {title}</h1>
+      <h2>AUTHOR {author}</h2>
       <p>ID {id}</p>
 
-      
-      <button onClick={()=>deleteBook(id)}>delete</button>
+      <p>delete</p>
       <p>update</p>
     </div>
   )

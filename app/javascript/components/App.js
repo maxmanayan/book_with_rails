@@ -51,7 +51,7 @@ const App = () => {
 
   return(
     <div>
-      <h1>App Page</h1>
+      <h1 className='comic-container'>Comic Book List </h1>
       <BookForm createBook={createBook}/>
       <Books books={books} deleteBook={deleteBook}/>
       
