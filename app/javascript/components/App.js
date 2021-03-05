@@ -49,11 +49,21 @@ const App = () => {
     
   }
 
+  const updateBook = async (editedBook, id) => {
+    try {
+      let res = await axios.put(`/books/${id}`, editedBook)
+      let updateBookList = books.map(book => book.id !== id ? book : res.data)
+      setBooks (updateBookList)
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   return(
     <div>
-      <h1 className='comic-container'>Comic Book List </h1>
+      <h1>Comic Book List </h1>
       <BookForm createBook={createBook}/>
-      <Books books={books} deleteBook={deleteBook}/>
+      <Books books={books} deleteBook={deleteBook} updateBook={updateBook}/>
       
     </div>
   )
@@ -61,4 +71,5 @@ const App = () => {
 
 
 
+// module.exports=App
 export default App;
