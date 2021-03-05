@@ -51,9 +51,14 @@ const App = () => {
 
   const updateBook = async (editedBook, id) => {
     try {
+      console.log("in updateBook function")
+      console.log(editedBook, id)
       let res = await axios.put(`/books/${id}`, editedBook)
+      console.log(res.data)
       let updateBookList = books.map(book => book.id !== id ? book : res.data)
       setBooks (updateBookList)
+      console.log(books)
+      console.log("finished editing book")
     } catch(err) {
       console.log(err)
     }

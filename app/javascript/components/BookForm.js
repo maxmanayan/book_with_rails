@@ -2,9 +2,9 @@ import React, {useState} from "react";
 
 
 const BookForm = (props) => {
-  const {createBook, updateBook, id, author:writer, title:start} = props
-  const [title, setTitle] = useState("")
-  const [author,setAuthor] = useState("")
+  const {createBook, updateBook, id, author: defaultAuthor, title: defaultTitle} = props
+  const [title, setTitle] = useState(id ? defaultTitle : "")
+  const [author,setAuthor] = useState(id ? defaultAuthor : "")
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -13,6 +13,8 @@ const BookForm = (props) => {
     } else {
       createBook({title, author})
     }
+
+    // console.log(title, author)
 
     
   }
