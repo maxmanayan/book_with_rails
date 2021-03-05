@@ -21,7 +21,7 @@ const BookForm = (props) => {
 
   return(
     <div className='comics-read-container'>
-      <h1>{id ? "edit book here" : "create book"}</h1>
+      <h1>{id ? "edit book" : "create book"}</h1>
       <form onSubmit={handleSubmit}>
         <p>Title</p>
         <input value={title} onChange={(e) => setTitle(e.target.value)}/>

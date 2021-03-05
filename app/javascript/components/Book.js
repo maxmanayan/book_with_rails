@@ -7,13 +7,18 @@ const Book = (props) => {
   
   return(
     <div className= 'style-box'>
-      <h1>TITLE: {title}</h1>
-      <h2>AUTHOR {author}</h2>
-      <p>ID {id}</p>
+      <div className="style-box-contents">
+        <h1>"{title}"</h1>
+        <h2>by {author}</h2>
+        <p>ID {id}</p>
 
-      <button onClick={()=> deleteBook(id)}>delete</button>
-      <p>update</p>
-      <BookForm id={id} updateBook={updateBook} title={title} author={author}/>
+        <button onClick={()=> deleteBook(id)}>delete</button>
+      </div>
+     
+      <div className="style-box-edit-form">
+        <BookForm id={id} updateBook={updateBook} title={title} author={author}/>
+      </div>
+      
     </div>
   )
 }

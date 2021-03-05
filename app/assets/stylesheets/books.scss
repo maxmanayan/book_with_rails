@@ -34,10 +34,31 @@ p{
 .style-box{
   font-size: 15px;
   text-align: center;
-  border: darkblue;
+  border: 1px solid darkblue;
+
+  margin: 2em;
+  margin-left: 25%;
+  margin-right: 25%;
+  background: aliceblue;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
+.style-box-contents {
+  width: 66%;
+}
+
+
+.style-box-edit-form {
+  background: rgb(227, 235, 241);
+  width: 33%;
+  input {
+    width: 100%
+  }
+}
 
 // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 //   padding: 50px;
