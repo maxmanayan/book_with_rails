@@ -32,11 +32,6 @@ class BooksController < ApplicationController
 
     @book.update(book_params)
     render json: @book
-    # if @book.update(book_params)
-    #   render json: @book
-    # else
-    #   render json: ("error")
-    # end 
   end
 
   private
